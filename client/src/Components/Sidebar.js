@@ -24,7 +24,7 @@ const Sidebar = () => {
             <span className="sidebar_icon">
               <HomeIcon />
             </span>
-            &nbsp;<span className="sidebar_name">Home</span>
+            &nbsp; <span className="sidebar_name">Home</span>
           </a>
         </span>
         <span className="sidebar_li">
@@ -32,7 +32,7 @@ const Sidebar = () => {
             <span className="sidebar_icon">
               <HomeIcon />
             </span>
-            &nbsp;<span className="sidebar_name">Home</span>
+            &nbsp; <span className="sidebar_name">Home</span>
           </a>
         </span>
       </div>
