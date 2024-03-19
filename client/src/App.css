@@ -1,38 +1,508 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.main-div {
+  text-align: center;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: 20%;
+  margin-right: 5rem;
+}
+
+/* Navbar CSS */
+
+/* CSS Document */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
+
+body {
+  background: #fffdd0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+navbar-main-div {
+
+  background: #212121;
+  font-size: 22px;
+  line-height: 32px;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word !important;
+  font-family: "Open Sans", sans-serif;
+}
+
+navbarLinks {
+  color: #fff;
+}
+
+.toggle,
+[id^="drop"] {
+  display: none;
+}
+
+/* Giving a background-color to the nav container. */
+nav {
+
+  right: 0px;
+  margin: 0;
+  padding: 0;
+  background-color: #254441;
+}
+
+#logo {
+  display: block;
+  padding: 0 30px;
+  float: left;
+  font-size: 20px;
+  line-height: 60px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Since we'll have the "ul li" "float:left"
+ * we need to add a clear after the container. */
+
+nav:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Removing padding, margin and "list-style" from the "ul",
+ * and adding "position:reltive" */
+nav ul {
+  float: right;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+
+/* Positioning the navigation items inline */
+nav ul li {
+  margin: 0px;
+  display: block;
+  float: left;
+  background-color: #254441;
+}
+/* navbar_nav_ul_li {
+  margin: 0px;
+  display: block;
+  float: left;
+  background-color: #254441;
+} */
+
+/* Styling the links */
+nav a {
+  display: block;
+  padding: 14px 20px;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+nav ul li ul li:hover {
+  background: #000000;
+}
+
+/* Background color change on Hover */
+nav a:hover {
+  background-color: #000000;
+}
+
+/* Hide Dropdowns by Default
+ * and giving it a position of absolute */
+nav ul ul {
+  display: none;
+  position: absolute;
+  /* has to be the same number as the "line-height" of "nav a" */
+  top: 60px;
+}
+
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+  display: inherit;
+  margin-top: -5px;
+}
+
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+  width: 170px;
+  float: none;
+  display: list-item;
+  position: relative;
+}
+
+/* Second, Third and more Tiers	
+ * We move the 2nd and 3rd etc tier dropdowns to the left
+ * by the amount of the width of the first tier.
+*/
+nav ul ul ul li {
+  position: relative;
+  top: -60px;
+  /* has to be the same number as the "width" of "nav ul ul li" */
+  left: 170px;
+}
+
+/* Change ' +' in order to change the Dropdown symbol */
+li > a:after {
+  content: " +";
+}
+li > a:only-child:after {
+  content: "";
+}
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width: 1030px) {
+  #logo {
+    display: block;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    float: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  nav {
+    margin: 0;
   }
+
+  /* Hide the navigation menu by default */
+  /* Also hide the  */
+  .toggle + a,
+  .menu {
+    display: none;
+  }
+
+  /* Stylinf the toggle lable */
+  .toggle {
+    display: block;
+    background-color: #254441;
+    padding: 14px 20px;
+    color: #fff;
+    font-size: 17px;
+    text-decoration: none;
+    border: none;
+  }
+
+  .toggle:hover {
+    background-color: #000000;
+  }
+
+  /* Display Dropdown when clicked on Parent Lable */
+  [id^="drop"]:checked + ul {
+    display: block;
+  }
+
+  /* Change menu item's width to 100% */
+  nav ul li {
+    display: block;
+    width: 100%;
+  }
+
+  nav ul ul .toggle,
+  nav ul ul a {
+    padding: 0 40px;
+  }
+
+  nav ul ul ul a {
+    padding: 0 80px;
+  }
+
+  nav a:hover,
+  nav ul ul ul a {
+    background-color: #000000;
+  }
+
+  nav ul li ul li .toggle,
+  nav ul ul a,
+  nav ul ul ul a {
+    padding: 14px 20px;
+    color: #fff;
+    font-size: 17px;
+  }
+
+  nav ul li ul li .toggle,
+  nav ul ul a {
+    background-color: #212121;
+  }
+
+  /* Hide Dropdowns by Default */
+  nav ul ul {
+    float: none;
+    position: static;
+    color: #ffffff;
+    /* has to be the same number as the "line-height" of "nav a" */
+  }
+
+  /* Hide menus on hover */
+  nav ul ul li:hover > ul,
+  nav ul li:hover > ul {
+    display: none;
+  }
+
+  /* Fisrt Tier Dropdown */
+  nav ul ul li {
+    display: block;
+    width: 100%;
+  }
+
+  nav ul ul ul li {
+    position: static;
+    /* has to be the same number as the "width" of "nav ul ul li" */
+  }
+}
+
+@media all and (max-width: 330px) {
+  nav ul li {
+    display: block;
+    width: 94%;
+  }
+}
+
+.inactiveLink {
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Navbar CSS Ended Here */
+
+/* Sidebar CSS Starts Here */
+
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #0EA7A5;
+  color: white;
+  position: fixed;
+
+  height: 100%;
+  overflow: auto;
+  transition: width 0.3s ease;
+  &:hover {
+    width: 275px;
+  }
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.sidebar a.active {
+  background-color: #04aa6d;
+  color: white;
+}
+
+.sidebar a:hover:not(.active) {
+  background-color: #1d1919;
+  color: white;
+}
+
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
+}
+
+@media screen and (max-width: 700px ) {
+  .sidebar {
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {
+    float: left;
+  }
+  div.content {
+    margin-left: 0;
+  }
+  .sidebar_name{
+    display: none;
+  }
+
+  .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 3vw;
+    background-color: #0EA7A5;
+    color: white;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    transition: width 0.3s ease;
+    &:hover {
+      width: 10vw;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+  
+}
+
+/* Login Page CSS */
+
+.login-main-div {
+  border: 2px solid rgb(130, 74, 74);
+  padding: 1rem 5rem 7rem 5rem;
+  margin-right: 2rem;
+  background-color: #fff7a7;
+  box-shadow: 3px 3px red;
+}
+
+.loginFormInput {
+  width: 50%;
+  height: 10vh;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  box-shadow: 2px 2px black;
+  font-size: large;
+}
+.login_btn {
+  background-color: blue;
+  color: white;
+  font-size: large;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.title_heading {
+  font-size: xxx-large;
+  font-weight: bolder;
+  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  padding: 1rem;
+}
+
+@media all and (max-width: 1030px) {
+  .main-div {
+    text-align: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 16%;
+    margin-right: 0.5rem;
+  }
+  .sidebar {
+    margin: 0;
+    padding: 0;
+    width: 15vw;
+    background-color: #0EA7A5;
+    color: white;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    transition: width 0.3s ease;
+    &:hover {
+      width: 20vw;
+    }
+  }
+  .login-main-div {
+    border: 1px solid rgb(130, 74, 74);
+    padding-bottom: 5rem;
+    margin-right: 0;
+    background-color: #fff7a7;
+    box-shadow: 3px 3px red;
+  }
+
+  .loginFormInput {
+    width: 100%;
+    height: 10vh;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    box-shadow: 2px 2px black;
+    font-size: large;
+  }
+  .login_btn {
+    margin-top: 1rem;
+    background-color: blue;
+    color: white;
+    font-size: large;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+  .title_heading {
+    font-size: xxx-large;
+    font-weight: bolder;
+    background-image: linear-gradient(to left, #553c9a, #b393d3);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 560px) {
+  .title_heading {
+    margin: 0;
+    padding: 0;
+    font-size: xx-large;
+    font-weight: bold;
+    background-image: linear-gradient(to left, #553c9a, #b393d3);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    padding: 1rem;
+  }
+  .login-main-div{
+    padding: 0;
+    margin: 0;
+    padding-bottom: 5rem;
+  }
+  .loginFormInput {
+    width: 80%;
+    height: 10vh;
+    margin-top: 2rem;
+    border-radius: 1rem;
+
+    box-shadow: 2px 2px black;
+    font-size: large;
+  }
+}
+.login-main-div {
+  border: 2px solid rgb(130, 74, 74);
+  padding: 1rem 5rem 7rem 5rem;
+  margin-right: 2rem;
+  background-color: #fff7a7;
+  box-shadow: 3px 3px red;
+}
+
+.loginFormInput {
+  width: 50%;
+  height: 10vh;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  box-shadow: 2px 2px black;
+  font-size: large;
+}
+.main-body1 {
+  border: 2px solid black;
+  margin-top: 2rem;
+  padding: 2rem;
+  padding-bottom: 3rem;
+  margin-left: 25rem;
+  margin-right: 8rem;
+}
+.formInputRegistraion {
+  width: 100%;
+  height: 2rem;
+  margin-left: 0.5rem;
+  font-size: large;
+}
+
+.formDivRegistraion {
+  margin: 0.8rem 0rem 0.8rem 0.5rem;
 }
