@@ -33,6 +33,7 @@ const SellerLogin = () => {
   // }, [])
 
   let name, value;
+  
   const [user, setUser] = useState({ email: "", password: "" });
 
   const handleInput = (e) => {
