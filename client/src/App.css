@@ -1,11 +1,10 @@
 .App {
   text-align: center;
 }
-
 .main-div {
   text-align: center;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 5rem;
   margin-bottom: 2rem;
   margin-left: 20%;
   margin-right: 5rem;
@@ -26,7 +25,6 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 navbar-main-div {
-
   background: #212121;
   font-size: 22px;
   line-height: 32px;
@@ -48,8 +46,9 @@ navbarLinks {
 
 /* Giving a background-color to the nav container. */
 nav {
-
-  right: 0px;
+  position: fixed;
+  top: -0rem;
+  width: 100%;
   margin: 0;
   padding: 0;
   background-color: #254441;
@@ -127,7 +126,7 @@ nav ul ul {
 /* Display Dropdowns on Hover */
 nav ul li:hover > ul {
   display: inherit;
-  margin-top: -5px;
+  margin-top: -8px;
 }
 
 /* Fisrt Tier Dropdown */
@@ -151,7 +150,7 @@ nav ul ul ul li {
 
 /* Change ' +' in order to change the Dropdown symbol */
 li > a:after {
-  content: " +";
+  content: " ";
 }
 li > a:only-child:after {
   content: "";
@@ -204,6 +203,7 @@ li > a:only-child:after {
   nav ul li {
     display: block;
     width: 100%;
+    padding-left: 15%;
   }
 
   nav ul ul .toggle,
@@ -231,6 +231,7 @@ li > a:only-child:after {
   nav ul li ul li .toggle,
   nav ul ul a {
     background-color: #212121;
+    color: #fff;
   }
 
   /* Hide Dropdowns by Default */
@@ -279,10 +280,10 @@ li > a:only-child:after {
   margin: 0;
   padding: 0;
   width: 200px;
-  background-color: #0EA7A5;
+  background-color: #0ea7a5;
   color: white;
   position: fixed;
-
+  top: 3.7rem;
   height: 100%;
   overflow: auto;
   transition: width 0.3s ease;
@@ -314,8 +315,75 @@ div.content {
   padding: 1px 16px;
   height: 1000px;
 }
+@media screen and (max-width: 1630px) {
+  .sidebar {
+    position: fixed;
+    top: 3.6rem;
+  }
+  .main-div {
+    margin-top: 10rem;
+  }
+}
 
-@media screen and (max-width: 700px ) {
+
+@media screen and (max-width: 1620px) {
+  .sidebar {
+    position: fixed;
+    top: 3.6rem;
+  }
+  .main-div {
+    margin-top: 10rem;
+  }
+}
+@media screen and (max-width: 1418px) {
+  .sidebar {
+    position: fixed;
+    top: 2rem;
+  }
+  .main-div {
+    margin-top: 13rem;
+  }
+}
+@media screen and (max-width: 1430px) {
+  .sidebar {
+    position: fixed;
+    top: 10.9rem;
+  }
+  .main-body1{
+    margin: 0px;
+    padding: 0px;
+  }
+  .formDivRegistraion{
+    margin: 0;
+    padding: 0px;
+  }
+
+}
+@media screen and (max-width: 1294px) {
+  .sidebar {
+    position: fixed;
+    top: 10.9rem;
+  }
+}
+@media screen and (max-width: 1042px) {
+  .sidebar {
+    position: fixed;
+    top: 10.7rem;
+  }
+  .main-div {
+    margin-top: 13rem;
+  }
+}
+@media screen and (max-width: 1028px) {
+  .sidebar {
+    position: fixed;
+    top: 6.9rem;
+  }
+  .main-div {
+    margin-top: 15rem;
+  }
+}
+@media screen and (max-width: 700px) {
   .sidebar {
     height: auto;
     position: relative;
@@ -326,7 +394,7 @@ div.content {
   div.content {
     margin-left: 0;
   }
-  .sidebar_name{
+  .sidebar_name {
     display: none;
   }
 
@@ -334,7 +402,7 @@ div.content {
     margin: 0;
     padding: 0;
     width: 3vw;
-    background-color: #0EA7A5;
+    background-color: #0ea7a5;
     color: white;
     position: fixed;
     height: 100%;
@@ -351,7 +419,6 @@ div.content {
     text-align: center;
     float: none;
   }
-  
 }
 
 /* Login Page CSS */
@@ -360,8 +427,12 @@ div.content {
   border: 2px solid rgb(130, 74, 74);
   padding: 1rem 5rem 7rem 5rem;
   margin-right: 2rem;
+  margin-top: 10rem;
   background-color: #fff7a7;
-  box-shadow: 3px 3px red;
+  box-shadow: 0px -25px 20px -20px rgba(0,0,0,0.45),
+  25px 0px 20px -20px rgba(0,0,0,0.45),
+  0px 25px 20px -20px rgba(0,0,0,0.45),
+  -25px 0px 20px -20px rgba(0,0,0,0.45);
 }
 
 .loginFormInput {
@@ -378,11 +449,12 @@ div.content {
   font-size: large;
   padding: 1rem;
   border-radius: 0.5rem;
+  margin-right: 2rem;
 }
 .title_heading {
   font-size: xxx-large;
   font-weight: bolder;
-  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  background-image: linear-gradient(to left, #ef4141, #1006d0);
   color: transparent;
   background-clip: text;
   -webkit-background-clip: text;
@@ -402,7 +474,7 @@ div.content {
     margin: 0;
     padding: 0;
     width: 15vw;
-    background-color: #0EA7A5;
+    background-color: #0ea7a5;
     color: white;
     position: fixed;
     height: 100%;
@@ -447,6 +519,9 @@ div.content {
   }
 }
 @media screen and (max-width: 560px) {
+  .main-div{
+    margin-top: 8rem;
+  }
   .title_heading {
     margin: 0;
     padding: 0;
@@ -458,31 +533,35 @@ div.content {
     -webkit-background-clip: text;
     padding: 1rem;
   }
-  .login-main-div{
+  .login-main-div {
     padding: 0;
     margin: 0;
     padding-bottom: 5rem;
   }
   .loginFormInput {
-    width: 80%;
+    width: 100%;
     height: 10vh;
     margin-top: 2rem;
     border-radius: 1rem;
-
     box-shadow: 2px 2px black;
     font-size: large;
   }
 }
 .login-main-div {
   border: 2px solid rgb(130, 74, 74);
-  padding: 1rem 5rem 7rem 5rem;
+  padding: 0;
+  padding-bottom: 5rem;
   margin-right: 2rem;
   background-color: #fff7a7;
-  box-shadow: 3px 3px red;
+  box-shadow: 0px -25px 20px -20px rgba(0,0,0,0.45),
+  25px 0px 20px -20px rgba(0,0,0,0.45),
+  0px 25px 20px -20px rgba(0,0,0,0.45),
+  -25px 0px 20px -20px rgba(0,0,0,0.45);
+
 }
 
 .loginFormInput {
-  width: 50%;
+  width: 80%;
   height: 10vh;
   margin-top: 2rem;
   border-radius: 1rem;
@@ -491,11 +570,17 @@ div.content {
 }
 .main-body1 {
   border: 2px solid black;
-  margin-top: 2rem;
+  box-shadow: 0px -25px 20px -20px rgba(0,0,0,0.45),
+  25px 0px 20px -20px rgba(0,0,0,0.45),
+  0px 25px 20px -20px rgba(0,0,0,0.45),
+  -25px 0px 20px -20px rgba(0,0,0,0.45);
+  margin-top: 5rem;
   padding: 2rem;
-  padding-bottom: 3rem;
+  padding-bottom: 5rem;
   margin-left: 25rem;
   margin-right: 8rem;
+  margin-bottom: 2rem;
+
 }
 .formInputRegistraion {
   width: 100%;
@@ -506,4 +591,6 @@ div.content {
 
 .formDivRegistraion {
   margin: 0.8rem 0rem 0.8rem 0.5rem;
+  font-size: large;
+  font-weight: bold;
 }
