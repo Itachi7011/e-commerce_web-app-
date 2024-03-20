@@ -15,7 +15,6 @@ const CustomerRegistration = () => {
     state: "",
     district: "",
     fullAddress: "",
-    totalAmount: "",
     dateOfFormSubmission: "",
     password: "",
     cpassword: "",
@@ -34,12 +33,12 @@ const CustomerRegistration = () => {
   return (
     <>
       <div className="main-body1">
-        
-        <div className="nav-btn">
-          <h1> New Saving Account Opening Request : </h1>
+
+        <div className="nav-btn" style={{textAlign: "center"}}>
+          <h1 className="title_heading"> New Saving Account Opening Request : </h1>
         </div>
         <div className="registrationForm">
-          <form action="/reqNewSavAcc" method="POST">
+          <form action="/newCustomerRegistration" method="POST">
 
             <div className="mb-3 formDivRegistraion">
               {" "}
@@ -229,7 +228,7 @@ const CustomerRegistration = () => {
               <button
                 type="submit"
                 value="signUp"
-                className="btn btn-primary btn-lg m-3"
+                className="login_btn"
                 style={{ float: "right" }}
               >
                 Submit
