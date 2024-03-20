@@ -1,10 +1,32 @@
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "./App.css";
+
+import Navbar from "./Components/Navbar";
+import Home from "./Components/Home";
+import Sidebar from "./Components/Sidebar";
+import CustomerRegistration from "./Components/Customers/CustomerRegistration";
+import CustomerLogin from "./Components/Customers/CustomerLogin";
+import SellerLogin from "./Components/Sellers/SellerLogin";
+import Error from "./Components/Error";
 
 function App() {
   return (
-    <div className="App">
-      <h1>E-Commerce Website :</h1>
-    </div>
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <Sidebar/>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/CustomerRegistration" element={<CustomerRegistration />}></Route>
+
+          <Route path="/CustomerLogin" element={<CustomerLogin />}></Route>
+          <Route path="/SellerLogin" element={<SellerLogin />}></Route>
+
+          <Route path="*" element={<Error />} > </Route>
+        </Routes>
+      </BrowserRouter>
+      
+    </>
   );
 }
 
