@@ -33,6 +33,7 @@ navbar-main-div {
   padding: 0;
   word-wrap: break-word !important;
   font-family: "Open Sans", sans-serif;
+  z-index: 50 !important;
 }
 
 navbarLinks {
@@ -52,6 +53,7 @@ nav {
   margin: 0;
   padding: 0;
   background-color: #254441;
+  z-index: 20;
 }
 
 #logo {
@@ -359,12 +361,7 @@ div.content {
   }
 
 }
-@media screen and (max-width: 1294px) {
-  .sidebar {
-    position: fixed;
-    top: 10.9rem;
-  }
-}
+
 @media screen and (max-width: 1042px) {
   .sidebar {
     position: fixed;
@@ -453,6 +450,7 @@ div.content {
 }
 .title_heading {
   font-size: xxx-large;
+  text-align: center;
   font-weight: bolder;
   background-image: linear-gradient(to left, #ef4141, #1006d0);
   color: transparent;
@@ -593,4 +591,99 @@ div.content {
   margin: 0.8rem 0rem 0.8rem 0.5rem;
   font-size: large;
   font-weight: bold;
+}
+
+/* Mobile Cards CSS  */
+
+
+
+.card_main-div{
+  border: 2px solid black;
+  padding: 2rem 1rem 2rem 1rem;
+  margin: 5rem 1rem 4rem 18rem;
+  display: inline-grid;
+  grid-column: 4/4;
+  grid-template-columns: 1fr 1fr 1fr 1fr ;
+  box-shadow: 0px -25px 20px -20px rgba(0,0,0,0.45),
+  25px 0px 20px -20px rgba(0,0,0,0.45),
+  0px 25px 20px -20px rgba(0,0,0,0.45),
+  -25px 0px 20px -20px rgba(0,0,0,0.45);
+}
+.title_heading-card-mobile {
+  font-size: xxx-large;
+  text-align: center;
+  font-weight: bolder;
+  background-image: linear-gradient(to left, #ef4141, #1006d0);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  padding: 1rem;
+  margin-top: 5rem;
+  border: 0.3rem solid black;
+  margin-left: 18rem;
+  margin-right: 8rem;
+  box-shadow: 0px -25px 20px -20px rgba(0,0,0,0.45),
+  25px 0px 20px -20px rgba(0,0,0,0.45),
+  0px 25px 20px -20px rgba(0,0,0,0.45),
+  -25px 0px 20px -20px rgba(0,0,0,0.45);
+}
+@media screen and ( max-width: 1826px ){
+  .card_main-div{
+  padding: 2rem 1rem 2rem 1rem;
+  margin: 5rem 1rem 4rem 18rem;
+  grid-column: 3/3;
+  grid-template-columns: 1fr 1fr 1fr ;
+  }
+}
+
+@media screen and (max-width: 1294px) {
+  .card_main-div{
+    padding: 2rem 1rem 2rem 1rem;
+    margin: 5rem 1rem 4rem 12rem;
+    grid-column: 2/2;
+    grid-template-columns: 1fr 1fr;
+    }
+  
+}
+@media screen and (max-width: 702px) {
+  .card_main-div{
+    padding: 2rem 1rem 2rem 1rem;
+    margin: 5rem 1rem 4rem 9rem;
+    grid-column: 2/2;
+    grid-template-columns: 1fr 1fr;
+    }
+  
+}
+@media screen and (max-width: 650px) {
+  .card_main-div{
+    padding: 1rem 2.5rem 2rem 0rem;
+    margin: 5rem 1rem 4rem 9rem;
+    grid-column: 1/1;
+    grid-template-columns: 1fr;
+    }
+    .title_heading-card-mobile {
+      font-size: 5w;
+      padding: 1rem 2rem;
+      margin-top: 8rem;
+      border: 0.3rem solid black;
+      margin-left: 9rem;
+      margin-right: 4rem;
+    }
+  
+}
+@media screen and ( max-width: 485px ){
+  .card_main-div{
+    padding: 1rem 0rem 2rem 0rem;
+    margin: 5rem 1rem 4rem 5rem;
+    grid-column: 1/1;
+    grid-template-columns: 1fr;
+    }
+    .title_heading-card-mobile {
+      font-size: 5w;
+      padding: 1rem 2rem;
+      margin-top: 8rem;
+      border: 0.3rem solid black;
+      margin-left: 7rem;
+      margin-right: 3rem;
+    }
 }
