@@ -6,6 +6,9 @@ const newCustomerSchema = new mongoose.Schema({
   accountStatus: {
     type: String,
     default: "active",
+  },accountType: {
+    type: String,
+    default: "customer",
   },
   name: {
     type: String,
@@ -52,8 +55,13 @@ const newCustomerSchema = new mongoose.Schema({
 });
 
 newCustomerSchema.pre("save", async function (next) {
-  if (this.isModified("password")) {
-    this.password = bcrypt.hash(this.password, 10);
+  if (this.isModified('password')) {
+    try {
+      const saltRounds = 10;
+      this.password = await bcrypt.hash(this.password, saltRounds);
+    } catch (error) {
+      return next(error);
+    }
   }
   next();
 });
