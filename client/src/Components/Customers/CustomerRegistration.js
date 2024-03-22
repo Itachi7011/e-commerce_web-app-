@@ -35,7 +35,7 @@ const CustomerRegistration = () => {
       <div className="main-body1">
 
         <div className="nav-btn" style={{textAlign: "center"}}>
-          <h1 className="title_heading"> New Saving Account Opening Request : </h1>
+          <h1 className="title_heading"> New Customer Registration : </h1>
         </div>
         <div className="registrationForm">
           <form action="/newCustomerRegistration" method="POST">
