@@ -6,6 +6,7 @@ import Navbar from "./Components/Navbar";
 import Home from "./Components/Home";
 import Sidebar from "./Components/Sidebar";
 import CustomerRegistration from "./Components/Customers/CustomerRegistration";
+import SellerRegistration from "./Components/Sellers/SellerRegistration";
 import CustomerLogin from "./Components/Customers/CustomerLogin";
 import SellerLogin from "./Components/Sellers/SellerLogin";
 import MobileProducts from "./Components/ProductsForCustomers/MobileProducts";
@@ -20,6 +21,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/CustomerRegistration" element={<CustomerRegistration />}></Route>
+          <Route path="/SellerRegistration" element={<SellerRegistration />}></Route>
 
           <Route path="/CustomerLogin" element={<CustomerLogin />}></Route>
           <Route path="/SellerLogin" element={<SellerLogin />}></Route>
